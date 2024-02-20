@@ -1,21 +1,25 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autor</title>
+
 </head>
+
 <body>
-    
     <h1>{{objeto.nombre}}</h1>
-    <ul>
+
     {% for i in objeto.frasedb_set.all %}
-    
-    
+
+    <ul>
         <li>{{i.cita}}</li>
-    
+    </ul>
 
     {% endfor %}
-</ul>
+
 </body>
+
 </html>

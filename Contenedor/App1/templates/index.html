@@ -1,34 +1,42 @@
 {% load static %}
-<!-- Necesitas {% load static %} para poder cargar los archivos estáticos-->
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Taller</title>
-    <link rel="stylesheet" href="{% static "estilos.css" %}">
-    <!-- Necesitas {% static "" %} para poder cargar un archivo estático-->
+    <link rel="stylesheet" href="{% static "style.css" %}">
 </head>
+
 <body>
     <h1>Hola Comunidad</h1>
-    <br>
-    <p>Hola, ¿cómo están? Espero que estén bien.</p>
+    <br>Espero que esten bien</br>
+
     <hr>
     <ul>
-        {% for i in objeto %}
-            <li><a href="autor/{{ i.id }}">{{ i.nombre }}</a></li> 
-            <ul>
-                {% for u in i.profesion.all %}
-                    <li>{{ u.nombre }}</li>
-                {% endfor %}
-            </ul>
+    {% for i in objeto %}
+
+    <ul>
+        <li><a href="autor/{{i.id}}">{{i.nombre}}</a></li>
+    <ul>
+        {% for u in i.profesion.all %}
+        <li>{{u.nombre}}</li>
         {% endfor %}
     </ul>
 
-    {% if objeto %}
-        <h2>TENEMOS EL OBJETO</h2>
+    </ul>
+    {% endfor %}
+
+    {% if objeto%}
+    <h2>TENEMOS EL OBJETO</h2>
     {% else %}
-        <h2>NO TENEMOS EL OBJETO</h2>
+    <h2>NO TENEMOS EL OBJETO</h2>
     {% endif %}
-    <script src="{% static "script.js" %}"></script>
+    </ul>    
+    </hr>
+
+<script src="{% static "script.js" %}"></script>
 </body>
+</html>
